@@ -5,10 +5,12 @@ import { styled } from '@mui/material/styles';
 import "./header.css";
 
 
-function Header({ selectedView }) {
+function Header({ selectedView, setSelectedView }) {
     const [value, setValue]=useState(selectedView);
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        setSelectedView(newValue);
+        console.log(newValue)
       };
 
     const StyledTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({

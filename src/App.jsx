@@ -16,6 +16,7 @@ const theme = createTheme({
 
 const App = () => {
   const [selectedView, setSelectedView] = useState("home");
+  console.log(selectedView)
   const renderContent = () => {
     switch (selectedView) {
       case "home":
@@ -34,7 +35,7 @@ const App = () => {
   };
   return (
   <ThemeProvider theme={theme}>
-   <Header selectedView={selectedView} />
+   <Header selectedView={selectedView} setSelectedView={setSelectedView} />
    <main>{renderContent()}</main>
   </ThemeProvider>
   );

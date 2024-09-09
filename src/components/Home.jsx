@@ -1,8 +1,7 @@
 import React from "react";
 import "./home.css";
-import Header from "./Header";
 
-function Home() {
+function Home({ selectedView }) {
 
   return (
     <div className="background-container">
