@@ -1,35 +1,8 @@
 {
     "paintings": [
         {
-            "img_url": "../data/data/paintings/attentionAuTourbillon.jpg",
-            "title":"Attention au tourbillon",
-            "artist": "Emma Casagrande",
-            "size": "",
-            "description": "Dans une époque tumultueuse, il est facile de perdre pied dans un tourbillon acharné. Un oeil ouvert qui résiste par dessus tout. On finira par y arriver."
-        },
-        {
-            "img_url": "../data/paintings/chatDeLauriane.jpg",
-            "title":"Chat de l'amie",
-            "artist": "Emma Casagrande",
-            "size": "",
-            "description": "Le chat fleuri de ma meilleure amie."
-        },
-        {
-            "img_url": "../data/paintings/grenoble.jpg",
-            "title":"Grenoble",
-            "artist": "Emma Casagrande",
-            "size": "",
-            "description": "Les montagnes de Grenoble m'ont chéri et surveillé pendant quelques mois. Une présence rassurante quoiqu'un peu impressionnante."
-        },
-        {
-            "img_url": "../data/paintings/coucherDeSoleil.jpg",
-            "title":"Coucher de soleil",
-            "artist": "Emma Casagrande",
-            "size": "",
-            "description": "Un coucher de soleil quelque peu inspiré des couchers de soleil de Renoir découverts au musée de l'Orangerie et qui ont imprimé ma rétine de manière permanente."
-        },
-        {
             "img_url": "../data/paintings/flash.jpg",
+            "date":"Août 2023",
             "title":"Flash",
             "artist": "Emma Casagrande",
             "size": "",
@@ -37,6 +10,7 @@
         },
         {
             "img_url": "../data/paintings/impatience.jpg",
+            "date":"Février 2024",
             "title":"Longueurs de l'impatience",
             "artist": "Emma Casagrande",
             "size": "",
@@ -44,6 +18,7 @@
         },
         {
             "img_url": "../data/paintings/laBetiseHumaine.jpg",
+            "date":"Octobre 2023",
             "title":"La Bêtise humaine",
             "artist": "Emma Casagrande",
             "size": "",
@@ -51,6 +26,7 @@
         },
         {
             "img_url": "../data/paintings/laMontagneSein.jpg",
+            "date":"Février 2024",
             "title": "La Montagne Sein",
             "artist": "Emma Casagrande",
             "size": "",
@@ -58,6 +34,7 @@
         },
         {
             "img_url": "../data/paintings/laPorteDivine.jpg",
+            "date":"Novembre 2023",
             "title":"La Porte Divine",
             "artist": "Emma Casagrande",
             "size": "",
@@ -65,6 +42,7 @@
         },
         {
             "img_url": "../data/paintings/lesAidants.jpg",
+            "date":"Novembre 2023",
             "title":"Les Aidants",
             "artist": "Emma Casagrande",
             "size": "",
@@ -72,6 +50,7 @@
         },
         {
             "img_url": "../data/paintings/lesTroisAmes.jpg",
+            "date":"Décembre 2023",
             "title": "Trois visions d'une même âme",
             "artist": "Emma Casagrande",
             "size": "",
@@ -79,20 +58,39 @@
         },
         {
             "img_url": "../data/paintings/miseEnGardeDuFlamandOmniscient.jpg",
+            "date":"Octobre 2023",
             "title":"Mise en garde du flamand Omniscient",
             "artist": "Emma Casagrande",
             "size": "",
             "description": "Le flamand rose nous surveille. Garde à vous"
         },
         {
+            "img_url": "../data/paintings/flores.jpg",
+            "date":"Août 2024",
+            "title":"Flores",
+            "artist": "Emma Casagrande",
+            "size": "",
+            "description": "Las flores del jardín siempre acaban floreciendo"
+        },
+        {
             "img_url": "../data/paintings/paysageCotier.jpg",
+            "date":"Janvier 2024",
             "title" : "Paysage Côtier",
             "artist": "Emma Casagrande",
             "size": "",
             "description": "Un paysage côtier chez mes parents."
         },
         {
+            "img_url": "../data/paintings/attentionAuTourbillon.jpg",
+            "date":"Décembre 2023",
+            "title":"Attention au tourbillon",
+            "artist": "Emma Casagrande",
+            "size": "",
+            "description": "Dans une époque tumultueuse, il est facile de perdre pied dans un tourbillon acharné. Un oeil ouvert qui résiste par dessus tout. On finira par y arriver."
+        },
+        {
             "img_url": "../data/paintings/versLeMieux.jpg",
+            "date":"Août 2023",
             "title":"Vers le Mieux",
             "artist": "Emma Casagrande",
             "size": "",

@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import heic2any from 'heic2any';
 
 
 const ImageDisplay = ({ src, alt }) => {
+  console.log(src)
   const [imageSrc, setImageSrc] = useState(src);
   console.log(imageSrc)
+
+  useEffect(() => {setImageSrc(src)
+  },[src]
+  )
 
 //   const handleImageLoad = () => {
 //     console.log(src)
@@ -22,12 +27,12 @@ const ImageDisplay = ({ src, alt }) => {
 
   return (
     <Box>
-      {imageSrc && (
+      {src && (
         <img 
-          src={imageSrc} 
+          src={src} 
           alt={alt} 
         //   onLoad={handleImageLoad}
-        style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+        style={{ width: 'auto', height: '75vh', objectFit: 'contain' }}
         />
       )}
     </Box>
