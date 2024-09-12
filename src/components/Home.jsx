@@ -9,7 +9,7 @@ function Home({ selectedView }) {
         <div className="abril-fatface-regular" style={{ color: 'white', fontSize: '110px' }}>
             Emma Casagrande</div>
             <div className="abril-fatface-regular" style={{ color: 'white', fontSize: '60px' }}>
-            peintures</div>
+            <i>peintures</i></div>
   </div>
 )
 }
