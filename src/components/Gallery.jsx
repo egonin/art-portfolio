@@ -2,12 +2,12 @@ import React, {useState, useEffect} from "react";
 import "./home.css";
 import { ImageList, ImageListItem, Box, Typography } from '@mui/material'
 import data from "../data/data.json"
-
 function Gallery({ selectedView }) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     const preloadImages = async () => {
@@ -41,6 +41,14 @@ function Gallery({ selectedView }) {
     }
   }, [isLoading]);
 
+  const handleMouseOver = (item) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
   return (
     <div className="background-container">
       {isLoading ? (
@@ -49,13 +57,35 @@ function Gallery({ selectedView }) {
       <Box sx={{ overflowY: 'scroll' }}>
       <ImageList variant="masonry" cols={3} gap={8}>
         {data.paintings.map((item) => (
-          <ImageListItem key={item.img_url}>
+          <ImageListItem key={item.img_url} onMouseOver={() => handleMouseOver(item)} onMouseLeave={handleMouseLeave}>
             <img
               srcSet={`${item.img_url}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img_url}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
             />
+            {hoveredItem === item && (
+                  <Box sx={{ 
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width:"96%",
+                    height:"97%",
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    padding: '10px',
+                    color: 'white',
+                    display:"flex",
+                    flexDirection:'column',
+                    justifyContent:"center",
+                    alignItems:"center",
+                    textAlign:'center'
+                  }}>
+                    <Box marginBottom={2}>
+                    <Typography variant="h4"  fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)">{item.title}</Typography>
+                    </Box>
+                    <Typography variant="h7" fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)">{item.description}</Typography>
+                  </Box>
+                )}
           </ImageListItem>
         ))}
       </ImageList>
