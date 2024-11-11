@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import Gallery from "./components/Gallery";
@@ -33,6 +33,20 @@ const App = () => {
         return null;
     }
   };
+
+  //deactivate right-click mouse to avoid people downloading the images
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+  
+    document.addEventListener('contextmenu', handleContextMenu);
+  
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+  
   return (
   <ThemeProvider theme={theme}>
    <Header selectedView={selectedView} setSelectedView={setSelectedView} />
