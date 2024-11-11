@@ -5,14 +5,16 @@
             "date":"Août 2023",
             "title":"Flash",
             "artist": "Emma Casagrande",
+            "type": "crayon de charbon",
             "size": "",
-            "description": "Un dessin de mon chat, au crayon de charbon."
+            "description": "Un dessin de mon chat."
         },
         {
             "img_url": "../data/paintings/impatience.jpg",
             "date":"Février 2024",
             "title":"Longueurs de l'impatience",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Patience est mère de sureté mais je me languissais de l'attente d'une bonne nouvelle apparue le lendemain de cet élan créatif venant du coeur."
         },
@@ -21,6 +23,7 @@
             "date":"Octobre 2023",
             "title":"La Bêtise humaine",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Un constat m'a frappé de plein fouet et j'ai eu peur que mon cerveau finisse par avoir la taille d'une crevette qu'un flamand rose de ma Camargue pourrait déguster avec plaisir. "
         },
@@ -29,6 +32,7 @@
             "date":"Février 2024",
             "title": "La Montagne Sein",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Une montagne surréaliste quelque peu sensuelle et osée."
         },
@@ -37,6 +41,7 @@
             "date":"Novembre 2023",
             "title":"La Porte Divine",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Au milieu de ces montagnes et étendues d'eau, une porte. Devons-nous l'ouvrir ?"
         },
@@ -45,6 +50,7 @@
             "date":"Novembre 2023",
             "title":"Les Aidants",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Les aidants finissent parfois par couler aussi."
         },
@@ -53,6 +59,7 @@
             "date":"Décembre 2023",
             "title": "Trois visions d'une même âme",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Le passé, le présent, le futur d'une même personne."
         },
@@ -61,6 +68,7 @@
             "date":"Octobre 2023",
             "title":"Mise en garde du flamand Omniscient",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Le flamand rose nous surveille. Garde à vous."
         },
@@ -69,6 +77,7 @@
             "date":"Août 2024",
             "title":"Flores",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Las flores del jardín siempre acaban eclosionando (gracias a Cariño)."
         },
@@ -77,6 +86,7 @@
             "date":"Janvier 2024",
             "title" : "Paysage Côtier",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Un paysage côtier chez mes parents."
         },
@@ -85,6 +95,7 @@
             "date":"Décembre 2023",
             "title":"Attention au tourbillon",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Dans une époque tumultueuse, il est facile de perdre pied dans un tourbillon acharné. Un oeil ouvert qui résiste par dessus tout. On finira par y arriver."
         },
@@ -93,8 +104,27 @@
             "date":"Août 2023",
             "title":"Vers le Mieux",
             "artist": "Emma Casagrande",
+            "type":"gouache",
             "size": "",
             "description": "Le début de tout, l'envie de tendre vers la vérité, la joie de vivre et l'humilité. On met les voiles vers le Mieux."
+        },
+        {
+            "img_url": "../data/paintings/flores2.jpeg",
+            "date":"Septembre 2024",
+            "title":"Flores 2",
+            "artist": "Emma Casagrande",
+            "type":"gouache",
+            "size": "",
+            "description": "Le charme et la beauté c'est la fleur de la peau, la danse qui flambe dans un oeil, la lumière que porte un sourire.  Yvon Paré"
+        },
+        {
+            "img_url": "../data/paintings/gaviotas.jpeg",
+            "date":"Octobre 2024",
+            "title":"Gaviotas",
+            "artist": "Emma Casagrande",
+            "type":"pastels à l'huile",
+            "size": "",
+            "description": "I am sure we crossed the sea together as two seagulls in love."
         }
     ]
 }

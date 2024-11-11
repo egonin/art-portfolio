@@ -19,6 +19,7 @@ function StackCarousel({item}) {
             <Typography variant="h3" fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)" textAlign={"center"} top={10}>{item.title}</Typography>
             <Typography variant="h5" fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)" textAlign={"center"}>{item.artist}</Typography>
             <Typography variant="h6" fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)" textAlign={"center"}>- {item.date} -</Typography>
+            <Typography variant="h7" fontFamily={"Abril FatFace"} color="rgb(104,168,198)" textAlign={"center"}>{item.type}</Typography>
             <Typography variant="body1" fontFamily={"Abril FatFace"} color="rgba(241, 203, 213, 0.929)" textAlign={"justify"}>{item.description}</Typography>
         </Box>
     </Box>
