@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useReducer } from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -10,13 +10,15 @@ const MyCarousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState([items[0], items[1]]);
   const [isLoading, setIsLoading] = useState(true);
+  const globalIndexRef = useRef(currentIndex)
+  const containerRef = useRef(null);
 
   // preloading of the images to avoid loading images issues
   useEffect(() => {
     const preloadImages = async () => {
       const visibleItemIndices = [currentIndex, (currentIndex + 1) % items.length];
-      
-      const preloadPromises = visibleItemIndices.map(index => 
+
+      const preloadPromises = visibleItemIndices.map(index =>
         loadImage(items[index])
       );
 
@@ -39,47 +41,48 @@ const MyCarousel = ({ items }) => {
   };
 
   // key events for the carousel
-  useEffect(() => {
-  const handleKeyDown = (event) => {
-    console.log("we have a key down event")
-    switch(event.key) {
-      case 'ArrowLeft':
-        goToPreviousSlide();
-        break;
-      case 'ArrowRight':
-        goToNextSlide();
-        break;
-      default:
-        break;
-    }
-  };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-  
-  
-  const handleKeypress = useCallback(
-    (e) => {
-      if (e.keyCode === 37) {
-        goToPreviousSlide();
-      } else if (e.keyCode === 39) {
-        goToNextSlide();
-      }
-    },
-    []
-  );
+  // useEffect(() => {
+  //   const handleKeyDown = (event) => {
+  //     console.log("we have a key down event")
+  //     switch (event.key) {
+  //       case 'ArrowLeft':
+  //         goToPreviousSlide();
+  //         break;
+  //       case 'ArrowRight':
+  //         goToNextSlide();
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   };
+  //   window.addEventListener('keydown', handleKeyDown);
+  //   return () => {
+  //     window.removeEventListener('keydown', handleKeyDown);
+  //   };
+  // }, [currentIndex]);
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeypress);
-    return () => document.removeEventListener("keydown", handleKeypress);
-  }, []);
+  // const handleKeypress = useCallback(
+  //   (e) => {
+  //     if (e.keyCode === 37) {
+  //       goToPreviousSlide();
+  //     } else if (e.keyCode === 39) {
+  //       goToNextSlide();
+  //     }
+  //   },
+  //   []
+  // );
+
+  // useEffect(() => {
+  //   document.addEventListener("keydown", handleKeypress);
+  //   return () => document.removeEventListener("keydown", handleKeypress);
+  // }, []);
 
   // when the user clicks on the left arrow
   const goToPreviousSlide = useCallback(() => {
     const prevIndex = (currentIndex - 1 + items.length) % items.length;
     console.log(prevIndex, "prevIndex", currentIndex, "currentIndex")
+    globalIndexRef.current = currentIndex;
+    containerRef.current.focus();
     setCurrentIndex(prevIndex);
   });
 
@@ -87,30 +90,39 @@ const MyCarousel = ({ items }) => {
   const goToNextSlide = useCallback(() => {
     const nextIndex = (currentIndex + 1) % items.length;
     console.log(nextIndex, "nextIndex", currentIndex, "currentIndex global")
+    globalIndexRef.current = currentIndex;
+    containerRef.current.focus();
     setCurrentIndex(nextIndex);
-  });
+  }, [currentIndex]);
+
+  // useEffect(() => {
+  //   // Cette fonction sera appelée à chaque rafraîchissement du DOM
+  //   console.log("DOM rafraîchi", globalIndexRef.current);
+  // }, [currentIndex]);
 
   const renderItems = (items) => {
     let index = currentIndex;
     // Push the current configuration
-    setVisibleItems(items[index], items[(index+1) % items.length]);
+    setVisibleItems(items[index], items[(index + 1) % items.length]);
     console.log("Visible items :", visibleItems);
     return visibleItems
   };
 
   return (
-    <Box display={"flex"} flexDirection={"horizontal"} alignContent={"center"}
-    sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+    <Box
+      ref={containerRef}
+      display={"flex"} flexDirection={"horizontal"} alignContent={"center"}
+      sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
       <IconButton onClick={goToPreviousSlide} sx={{ position: 'absolute', top: "40vh", left: 10 }}>
-        <NavigateBeforeIcon fontSize='large'/>
+        <NavigateBeforeIcon fontSize='large' />
       </IconButton>
-        {visibleItems.map((item, index) => (
-          <Box className="HOLA-QUE-TAL" key={index} sx={{ width: '50%' }} marginLeft={2} marginRight={2}>
-            <StackCarousel item={item}/>
-          </Box>
-        ))}
-      <IconButton onClick={goToNextSlide} sx={{ position: 'absolute', top: "40vh", right: 10}}>
-        <NavigateNextIcon fontSize="large"/>
+      {visibleItems.map((item, index) => (
+        <Box className="HOLA-QUE-TAL" key={index} sx={{ width: '50%' }} marginLeft={2} marginRight={2}>
+          <StackCarousel item={item} />
+        </Box>
+      ))}
+      <IconButton onClick={goToNextSlide} sx={{ position: 'absolute', top: "40vh", right: 10 }}>
+        <NavigateNextIcon fontSize="large" />
       </IconButton>
     </Box>
   )
